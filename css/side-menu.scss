@@ -1,0 +1,45 @@
+@mixin prefix($declarations, $prefixes: ()) {
+    @each $property, $value in $declarations {
+      @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+      }
+  
+      // Output standard non-prefixed declaration
+      #{$property}: $value;
+    }
+  }
+
+.side-nav {
+    width: fit-content;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    height: 100%;
+    font-size: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    @include prefix((transition: all 0.3s ease-in-out), webkit ms o moz);
+    span {
+        display: none;
+    }
+
+    .pages {
+        >li {
+            padding: 0.5rem;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background-color: #777;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .sign-out {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+    }
+}

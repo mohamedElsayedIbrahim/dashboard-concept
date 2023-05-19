@@ -1,0 +1,30 @@
+.side-nav {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  height: 100%;
+  font-size: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.side-nav span {
+  display: none;
+}
+.side-nav .pages > li {
+  padding: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.side-nav .pages > li:hover {
+  background-color: #777;
+  font-size: 1.5rem;
+}
+.side-nav .sign-out {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}/*# sourceMappingURL=side-menu.css.map */

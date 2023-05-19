@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/side-menu.css">
+</head>
+<body>
+
+    <nav class="side-nav bg-dark" id="side-bar">
+        <div class="text-end">
+        <button id="toggle-btn" class="btn btn-dark bg-transparent border-0" data-me-toggle="off"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <ul class="list-unstyled pages">
+            <li><a href="#" class="text-light text-capitalize text-decoration-none"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+            <li><a href="#" class="text-light text-capitalize text-decoration-none"><i class="fa-solid fa-store"></i> <span>Store</span></a></li>
+            <li><a href="#" class="text-light text-capitalize text-decoration-none"><i class="fa-solid fa-cart-shopping"></i> <span>product</span></a></li>
+            <li><a href="#" class="text-light text-capitalize text-decoration-none"><i class="fa-solid fa-cash-register"></i> <span>orders</span></a></li>
+        </ul>
+
+        <div class="sign-out">
+            <a href="#" class="btn btn-dark bg-black border-0 py-3 text-uppercase w-100"> <i class="fa-solid fa-right-from-bracket"></i> <span>sign out</span></a>
+        </div>
+
+    </nav>
+
+    <div class="content p-3" id="app">
+        <div class="bg-dark text-light shadow-sm rounded-1 p-2 d-flex justify-content-between align-items-center">
+            <h1>welcome, <span class="fs-3">userName</span></h1>
+            <img src="./logo.png" class="img-fluid" width="200" alt="logo">
+        </div>
+        <section class="mt-3">
+            <div class="containers">
+                <div class="row gy-3 align-items-stretch">
+                    <div class="col-md-4">
+                        <div class="bg-body-secondary rounded-1 p-2 h-100">
+                            <h2 class="text-capitalize">last 5 orders</h2>
+                            <table class="table table-hover table-striped">
+                                <thead class="text-primary">
+                                    <th scope="col">#</th>
+                                    <th scope="col">item name</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>item 1</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2</td>
+                                        <td>item 2</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td>
+                                        <td>item 3</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>4</td>
+                                        <td>item 4</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>5</td>
+                                        <td>item 5</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="bg-body-secondary rounded-1 p-2 h-100">
+                            <h2 class="text-capitalize">product analysis</h2>
+                            <canvas class="w-100" id="myCatagory"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="bg-body-secondary rounded-1 p-2 h-100">
+                            <h2 class="text-capitalize">Requested analysis</h2>
+                            <canvas class="w-100" id="myRequested"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="mt-3">
+            <div class="card is-loading">
+                <div class="image"></div>
+                <div class="content">
+                  <h2></h2>
+                  <p></p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/site-chart.js"></script>
+
+    <script src="./js/side.js"></script>
+
+    <script>
+        const container = document.querySelector(".container");
+const cardTemplate = document.getElementById("card-template");
+for (let i = 0; i < 10; i++) {
+  container.append(cardTemplate.content.cloneNode(true));
+}
+    </script>
+
+</body>
+</html>
